@@ -29,19 +29,16 @@
   }
 
   &__item {
-    background-color: grey;
-    opacity: 0.8;
     margin: 0;
-
-    &:nth-child(3n + 0) {
-      opacity: 0.6;
-    }
-    &:nth-child(3n + 1) {
-      opacity: 0.4;
-    }
 
     &--last {
       grid-column: 1/-1;
     }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 }
