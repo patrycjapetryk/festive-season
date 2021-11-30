@@ -1,0 +1,47 @@
+@import '../_variables';
+@import '../_mixins';
+
+.grid-gallery {
+  width: 100vw;
+
+  position: absolute;
+  left: calc((100vw - 100%) / -2);
+  top: 0;
+
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+
+  @media (min-width: $breakpoint-mobile-width) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $breakpoint-tablet-width) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: $breakpoint-laptop-width) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (min-width: $breakpoint-large-desktop-width) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  &__item {
+    background-color: grey;
+    opacity: 0.8;
+    margin: 0;
+
+    &:nth-child(3n + 0) {
+      opacity: 0.6;
+    }
+    &:nth-child(3n + 1) {
+      opacity: 0.4;
+    }
+
+    &--last {
+      grid-column: 1/-1;
+    }
+  }
+}
