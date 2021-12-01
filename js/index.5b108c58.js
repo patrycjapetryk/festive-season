@@ -1,0 +1,1 @@
+(()=>{"use strict";document.querySelectorAll(".grid-gallery__image--js").forEach((function(e){e.style.opacity=0,e.complete?e.style.opacity=1:e.addEventListener("load",(function(t){e.style.opacity=1}))}))})();
