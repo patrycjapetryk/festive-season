@@ -4,9 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: {
     index: './src/js/index.js',
-    background: './src/js/background.js',
     scroll: './src/js/scroll.js',
-    carousel: './src/js/carousel.js',
   },
   output: {
     filename: 'js/[name].[hash:8].js',
@@ -88,16 +86,16 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/pages/index.html',
       inject: 'body',
-      chunks: ['index'],
+      chunks: ['index', 'scroll'],
       filename: 'index.html',
       minify: false,
     }),
-    new HtmlWebpackPlugin({
-      template: './src/pages/modules-example.html',
-      inject: true,
-      chunks: ['index', 'background', 'scroll', 'carousel'],
-      filename: 'modules-example.html',
-      minify: false,
-    }),
+    // new HtmlWebpackPlugin({
+    //   template: './src/pages/modules-example.html',
+    //   inject: true,
+    //   chunks: ['index', 'background', 'scroll', 'carousel'],
+    //   filename: 'modules-example.html',
+    //   minify: false,
+    // }),
   ],
 };

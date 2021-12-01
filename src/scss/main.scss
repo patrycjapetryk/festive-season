@@ -13,8 +13,12 @@
 // @import 'modules/_scroll-carousel-with-arrows';
 @import 'modules/_button';
 // @import 'modules/_gallery';
-// @import 'modules/_animation-on-scroll';
+@import 'modules/_animation-on-scroll';
 // @import 'modules/_product';
+
+body {
+  overflow-x: hidden;
+}
 
 .main {
   color: $main-color;
@@ -28,14 +32,7 @@
   min-width: $main-min-width;
   max-width: $main-max-width;
   margin: 0 auto;
-  // overflow: hidden;
-
   position: relative;
-
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  // flex-direction: column;
 
   box-sizing: border-box;
   *,
