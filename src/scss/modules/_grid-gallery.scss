@@ -10,23 +10,7 @@
 
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: 1fr;
-
-  @media (min-width: $breakpoint-mobile-width) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (min-width: $breakpoint-tablet-width) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (min-width: $breakpoint-laptop-width) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  @media (min-width: $breakpoint-large-desktop-width) {
-    grid-template-columns: repeat(6, 1fr);
-  }
+  grid-template-columns: repeat(var(--columns), 1fr);
 
   &__item {
     margin: 0;

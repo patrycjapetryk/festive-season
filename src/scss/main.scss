@@ -41,6 +41,44 @@ body {
     box-sizing: inherit;
   }
 
+  --columns: 1;
+  --items: 24;
+  --small-image-aspect-ratio: 450/600;
+  --large-image-aspect-ratio: 1350/1012;
+  --rows: calc((var(--items)) / (var(--columns)));
+  --item-width: calc(100vw / (var(--columns)));
+  --item-height: calc((var(--item-width)) / (var(--small-image-aspect-ratio)));
+  --gallery-height: calc((var(--item-height) * var(--rows)));
+  --large-image-height: calc(100vw / (var(--large-image-aspect-ratio)));
+  --gallery-height-with-large-image: calc(
+    (var(--gallery-height)) + (var(--large-image-height))
+  );
+
+  @media (min-width: $breakpoint-mobile-width) {
+    --columns: 2;
+  }
+
+  @media (min-width: $breakpoint-tablet-width) {
+    --columns: 3;
+  }
+
+  @media (min-width: $breakpoint-laptop-width) {
+    --columns: 4;
+  }
+
+  @media (min-width: $breakpoint-large-desktop-width) {
+    --columns: 6;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: var(--gallery-height-with-large-image);
+  }
+
+  // images containers
+
   [style*='--aspect-ratio'] {
     position: relative;
 
