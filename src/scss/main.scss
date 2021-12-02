@@ -61,7 +61,6 @@ body {
   --item-width: calc(100vw / (var(--columns)));
   --item-height: calc((var(--item-width)) / (var(--small-image-aspect-ratio)));
   --gallery-height: calc((var(--item-height) * var(--rows)));
-  --gallery-height-on-mobile: calc((var(--gallery-height)) * 2);
 
   --large-image-height: calc(100vw / (var(--large-image-aspect-ratio)));
   --header-height: 100px;
@@ -71,14 +70,8 @@ body {
   );
 
   --gallery-height-with-all: calc(
-    (var(--gallery-height-on-mobile)) + (var(--large-image-with-header))
+    (var(--gallery-height)) + (var(--large-image-with-header))
   );
-
-  @media (min-width: $breakpoint-mobile-width) {
-    --gallery-height-with-all: calc(
-      (var(--gallery-height)) + (var(--large-image-with-header))
-    );
-  }
 
   &::before {
     content: '';
